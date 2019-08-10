@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DZ1</string>
+    <string name="edit_person">Edit person</string>
+
+    <string-array name="names">
+        <item> Ivan</item>
+        <item> Sergey</item>
+        <item> Misha</item>
+        <item> Sveta</item>
+        <item> Katya</item>
+        <item> Stepan</item>
+        <item> Olga</item>
+        <item> Masha</item>
+        <item> Glasha</item>
+        <item> Tanya</item>
+    </string-array>
+    <string-array name="surnames">
+        <item> Petrov</item>
+        <item> Stepanov</item>
+        <item> Pigaev</item>
+        <item> Solodva</item>
+        <item> Pont</item>
+        <item> Ivanov</item>
+        <item> Svetovs</item>
+        <item> Mishkin</item>
+        <item> Tipot</item>
+        <item> Glashkova</item>
+    </string-array>
+    <string-array name="types">
+        <item> Coder</item>
+        <item> Designer</item>
+        <item> Chief</item>
+        <item> Other</item>
+    </string-array>
+</resources>
