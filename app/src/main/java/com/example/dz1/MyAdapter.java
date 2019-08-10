@@ -30,7 +30,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         MyData item = data.get(position);
         holder.tv_name.setText(item.name);
         holder.tv_surname.setText(item.surname);
@@ -54,7 +54,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"button delete click",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(view.getContext(),"button delete click",Toast.LENGTH_SHORT).show();
+                data.remove(position);
+                //MyAdapter.this.notifyDataSetChanged();
+                MyAdapter.this.notifyItemRemoved(position);
             }
         });
 
