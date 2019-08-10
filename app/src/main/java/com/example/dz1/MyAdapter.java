@@ -16,6 +16,20 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private ArrayList<MyData> data;
+    public interface OnMyDataEditListener{
+        void onEditData(ArrayList<MyData> data, int position);
+
+    }
+
+    private OnMyDataEditListener onMyDataEditListener;
+
+    public OnMyDataEditListener getOnMyDataEditListener() {
+        return onMyDataEditListener;
+    }
+
+    public void setOnMyDataEditListener(OnMyDataEditListener onMyDataEditListener) {
+        this.onMyDataEditListener = onMyDataEditListener;
+    }
 
     public MyAdapter(ArrayList<MyData> data) {
         this.data = data;
@@ -48,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.btn_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"button edit click",Toast.LENGTH_SHORT).show();
+                onMyDataEditListener.onEditData(data,position);
             }
         });
         holder.btn_delete.setOnClickListener(new View.OnClickListener() {

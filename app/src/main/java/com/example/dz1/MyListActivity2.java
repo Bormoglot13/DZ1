@@ -5,10 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MyListActivity2 extends AppCompatActivity {
+public class MyListActivity2 extends AppCompatActivity implements MyAdapter.OnMyDataEditListener {
 
     ArrayList<MyData> data;
 
@@ -21,5 +22,11 @@ public class MyListActivity2 extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(data);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter.setOnMyDataEditListener(this);
+    }
+
+    @Override
+    public void onEditData(ArrayList<MyData> data, int position) {
+        Toast.makeText(this,"button edit click",Toast.LENGTH_SHORT).show();
     }
 }
